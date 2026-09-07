@@ -1,0 +1,22 @@
+package p0144_binary_tree_preorder_traversal;
+
+import common.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        preOrder(root, result);
+        return result;
+    }
+
+    private void preOrder(TreeNode root, List<Integer> result) {
+        if (root != null) {
+            result.add(root.val);
+            preOrder(root.left, result);
+            preOrder(root.right, result);
+        }
+    }
+}
